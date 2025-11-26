@@ -48,7 +48,7 @@
     <version>1.4.4</version>
 </dependency>
 
-<!-- JSON Web Token for Spring Boot 3 this is change maded -->
+<!-- JSON Web Token for Spring Boot 3 this is cha -->
 <dependency>
     <groupId>io.jsonwebtoken</groupId>
     <artifactId>jjwt-api</artifactId>
