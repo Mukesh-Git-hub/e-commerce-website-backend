@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 import jakarta.persistence.*;
 
 
-@Entity
+    @Entity
 	@Table(name = "users")
 	public class User {
 	    @Id
@@ -22,6 +22,7 @@ import jakarta.persistence.*;
 	    private String password;
 
 	    @Enumerated(EnumType.STRING)
+	    @Column(nullable = false)
 	    private Role role;
 
 	    @Column(nullable = false, updatable = false)
@@ -63,11 +64,16 @@ import jakarta.persistence.*;
 		}
 
 		public Role getRole() {
-			return role;
+		    return role;
 		}
 
 		public void setRole(Role role) {
-			this.role = role;
+		    this.role = role;
+		}
+
+		
+		public void setRole(String role) {
+		    this.role = Role.valueOf(role.toUpperCase());
 		}
 
 		public LocalDateTime getCreatedAt() {
@@ -85,6 +91,34 @@ import jakarta.persistence.*;
 		public void setUpdatedAt(LocalDateTime updatedAt) {
 			this.updatedAt = updatedAt;
 		}
+
+		public User(Integer userId, String username, String email, String password, Role role, LocalDateTime createdAt,
+				LocalDateTime updatedAt) {
+			super();
+			this.userId = userId;
+			this.username = username;
+			this.email = email;
+			this.password = password;
+			this.role = role;
+			this.createdAt = createdAt;
+			this.updatedAt = updatedAt;
+		}
+
+		public User() {
+			
+		}
+
+		public User(String username, String email, String password, Role role, LocalDateTime createdAt,
+				LocalDateTime updatedAt) {
+			super();
+			this.username = username;
+			this.email = email;
+			this.password = password;
+			this.role = role;
+			this.createdAt = createdAt;
+			this.updatedAt = updatedAt;
+		}
+		
 
 		
 

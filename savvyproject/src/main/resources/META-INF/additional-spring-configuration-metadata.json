@@ -1,5 +1,52 @@
-{"properties": [{
-  "name": "spring.security.enabled",
-  "type": "java.lang.String",
-  "description": "A description for 'spring.security.enabled'"
-}]}
+{"properties": [
+  {
+    "name": "spring.security.enabled",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.security.enabled'"
+  },
+  {
+    "name": "spring.web.cors.allow-credentials",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.allow-credentials'"
+  },
+  {
+    "name": "spring.web.cors.allowed-headers",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.allowed-headers'"
+  },
+  {
+    "name": "spring.web.cors.allowed-origin-patterns",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.allowed-origin-patterns'"
+  },
+  {
+    "name": "spring.web.cors.exposed-headers",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.exposed-headers'"
+  },
+  {
+    "name": "spring.web.cors.max-age",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.max-age'"
+  },
+  {
+    "name": "spring.web.cors.allowed-origins",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.allowed-origins'"
+  },
+  {
+    "name": "spring.web.cors.allowed-methods",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.web.cors.allowed-methods'"
+  },
+  {
+    "name": "jwt.secret",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.secret'"
+  },
+  {
+    "name": "jwt.expiration",
+    "type": "java.lang.String",
+    "description": "A description for 'jwt.expiration'"
+  }
+]}

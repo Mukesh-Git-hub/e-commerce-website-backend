@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.savvyproject.entities.User;
 import com.example.savvyproject.services.UserService;
 
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = "http://localhost:5175")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -34,7 +34,7 @@ public class UserController {
 			
 		}
 		catch (RuntimeException e) {
-			return ResponseEntity.badRequest().body(Map.of("error", e.getMessage()));
+			return ResponseEntity.badRequest().body(Map.of("error igot", e.getMessage()));
 		}
 	}
 	
