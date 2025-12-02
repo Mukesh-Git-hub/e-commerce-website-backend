@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.savvyproject.entities.User;
 import com.example.savvyproject.services.UserService;
 
-@CrossOrigin(origins = "http://localhost:5175")
+@CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
