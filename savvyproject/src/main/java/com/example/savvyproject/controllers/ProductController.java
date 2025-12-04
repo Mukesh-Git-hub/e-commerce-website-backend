@@ -36,9 +36,13 @@ public class ProductController {
     		 if(authenticatedUser == null) {
     			 return ResponseEntity.status(401).body(Map.of("error","Unauthorized access"));
     		 }
+    		 //to store the category
     		 List<Product> products  =productService.getProductsByCategory(Category);
-    		 Map<String,Object> response = new HashMap<>(); 
+    		 
+    		 Map<String,Object> response = new HashMap<>();
+    		 
     		 Map<String ,String> userInfo= new HashMap<>();
+    		 
     		 userInfo.put("name", authenticatedUser.getUsername());
     		 userInfo.put("role", authenticatedUser.getRole().name());
     		 response.put("user",userInfo);

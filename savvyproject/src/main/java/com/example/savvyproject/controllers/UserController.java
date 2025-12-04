@@ -34,7 +34,7 @@ public class UserController {
 			
 		}
 		catch (RuntimeException e) {
-			return ResponseEntity.badRequest().body(Map.of("error igot", e.getMessage()));
+			return ResponseEntity.badRequest().body(Map.of("error i got", e.getMessage()));
 		}
 	}
 	

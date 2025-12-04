@@ -29,8 +29,14 @@ public class UserService {
         }
 
         // Encrypt password
-        user.setPassword(passwordEncoder.encode(user.getPassword()));
-
+      // String password= user.setPassword(passwordEncoder.encode(user.getPassword()));
+        String encodedPassword = passwordEncoder.encode(user.getPassword());
+        user.setPassword(encodedPassword);
+        
+        //Education purpose print the password
+        //---------------------------------------------------
+System.out.println("This password encoded"+encodedPassword);
+       //---------------------------------------------------
         return userrepo.save(user);
     }
 }

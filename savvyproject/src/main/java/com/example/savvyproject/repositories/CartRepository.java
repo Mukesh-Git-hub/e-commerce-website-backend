@@ -22,4 +22,10 @@ public interface CartRepository extends JpaRepository<CartItem, Integer> {
         WHERE c.user.userId = :userId
     """)
     List<CartItem> findCartItemsWithProductDetails(int userId);
+
+   
+
+    void deleteAllByUserUserId(int userId);
+
+
 }

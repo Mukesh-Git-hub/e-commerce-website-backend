@@ -116,4 +116,20 @@ public class AuthService {
     public String extractUsername(String token) {
     	return Jwts.parserBuilder().setSigningKey(SIGNING_KEY).build().parseClaimsJws(token).getBody().getSubject();
     }
+    
+    
+    public void logout(User user) {
+    	int userId = user.getUserId();
+    	JWTToken token = jwtTokenRepository.findByUserId(userId);
+    	
+    	if(token!=null) {
+    		jwtTokenRepository.deleteByUserId(userId);
+    	}
+    }
+    
+    
+    
+    
+    
+    
 }

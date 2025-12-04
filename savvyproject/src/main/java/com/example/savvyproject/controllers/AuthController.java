@@ -16,6 +16,7 @@ import com.example.savvyproject.entities.User;
 import com.example.savvyproject.services.AuthService;
 
 import jakarta.servlet.http.Cookie;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 @CrossOrigin(origins = "http://localhost:5173", allowCredentials = "true")
@@ -64,4 +65,38 @@ public class AuthController {
             return ResponseEntity.status(401).body(Map.of("error", e.getMessage()));
         }
     }
+    
+    @PostMapping("/logout")
+    public ResponseEntity<Map<String,String>> logout(HttpServletRequest request,HttpServletResponse response){
+    	try {
+    		User user = (User) request.getAttribute("authenticatedUser");
+        	
+        	authService.logout(user);
+        	
+        	Cookie cookie = new Cookie("authToken",null);
+        	  cookie.setHttpOnly(true);
+              cookie.setPath("/");
+              cookie.setMaxAge(0);
+              response.addCookie(cookie);
+        	
+              Map<String,String> responseBody=new HashMap<>();
+              
+              responseBody.put("message", "Logout successful");
+              return ResponseEntity.ok(responseBody);
+    	}
+    	catch (Exception e) {
+			Map<String,String> errorResponse = new HashMap<>();
+			errorResponse.put("message", "logout failed");
+			return ResponseEntity.status(500).body(errorResponse);
+		}
+    	
+    	
+    }
+    
+    
+    
+    
+    
+    
+    
 }
